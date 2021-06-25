@@ -9,6 +9,12 @@ formBtn.addEventListener("click", () => {
         document.querySelector('.guessing').style = "color:red";
         score--;
         document.querySelector(".score").innerText = score;
+        if(score===0){
+            document.querySelector('.guessing').innerText = "You lose the game";
+            document.querySelector(".hidden").innerText = genNumber;
+            formBtn.disabled=true;
+            document.querySelector(".btn-again").classList.add("btn-again-animation");
+        }
     }
     else if (inputNumber === genNumber) {
         document.querySelector('.guessing').innerText = "Congratulation, Correct";
